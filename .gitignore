@@ -1,0 +1,9 @@
+.merlin
+*.bs.js
+/node_modules/
+/lib/*
+!/lib/js/*
+/bundledOutputs/
+npm-debug.log
+.DS_Store
+.bsb.lock
