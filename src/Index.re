@@ -1,1 +1,1 @@
-ReactDOMRe.renderToElementWithId(<Component />, "index2");
+ReactDOMRe.renderToElementWithId(<Todos />, "index2");

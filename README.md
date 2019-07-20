@@ -4,8 +4,9 @@ This is a WIP for learning ReasonML and ReasonReact.
 
 ## Project Progress
 
-- [x] [Initial: Get a super-basic todo, add-only, name-only, list created](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/2460cc4b1869b09ad681bb1389dbee7fc6e21aa4)
-- [ ] Feature: Create todos with "complete" capability
+- [x] [Initial: Get a super-basic todo, add-only, name-only, list created (#2460cc4)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/2460cc4b1869b09ad681bb1389dbee7fc6e21aa4)
+- [x] [Feature: Create todos with "complete" capability, add `id` and `key`s, convert to `useReducer` and switch (HEAD)](https://github.com/cerebralideas/todomvc-client-reasonreact)
+- [ ] Feature: Add delete functionality to todos
 
 ## Run Project
 

@@ -1,5 +1,5 @@
 {
-  "name": "my-react-app",
+  "name": "todomvc-client-reasonreact",
   "version": "0.1.0",
   "scripts": {
     "build": "bsb -make-world",
@@ -16,6 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bs-guid": "^1.0.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "reason-react": ">=0.7.0"
