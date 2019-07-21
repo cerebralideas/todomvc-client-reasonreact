@@ -6,8 +6,9 @@ This is a WIP for learning ReasonML and ReasonReact.
 
 - [x] [Initial: Get a super-basic todo, add-only, name-only, list created (#2460cc4)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/2460cc4b1869b09ad681bb1389dbee7fc6e21aa4)
 - [x] [Feature: Create todos with "complete" capability, add `id` and `key`s, convert to `useReducer` and switch (#5af9884)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/5af9884eba1b14824b474616e5d47226f1e40271)
-- [x] [Feature: Add delete functionality to todos, move state management to independent module, expand component usage, leverage "pipe first" and "reverse application operator" (master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
-- [ ] Feature: Add client-side routing
+- [x] [Feature: Add delete functionality to todos, move state management to independent module, expand component usage, leverage "pipe first" and "reverse application operator" (#7672a65)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/7672a65883950eb26f9c647bec8879b28d501f3c)
+- [x] [Feature: Add client-side routing. This is the recommended way to use ReasonReactRouter. Though, I'm not a fan of how integrated the router is into the React views. (master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
+- [ ] Feature: Add useContext to prevent having to pass state and dispatch around through components.
 
 ## Run Project
 

@@ -3,6 +3,10 @@ type todo = {
 	completed: bool,
 	id: string
 };
+type state = {
+	filter: string,
+	todos: list(todo)
+};
 type action =
 	| AddTodo
 	| CompleteTodo
@@ -13,35 +17,48 @@ let initialTodo: todo = {
 	completed: false,
 	id: Uuid.V4.uuidv4()
 };
+let initialState: state = {
+	filter: "all",
+	todos: [ initialTodo ]
+}
 let reducer = (state, (action: action, title: string, id: string)) => {
 	switch (action) {
 		| AddTodo => {
-			[
-				{
-					title: title,
-					completed: false,
-					id: Uuid.V4.uuidv4()
-				},
-				...state
-			];
+			{
+				filter: state.filter,
+				todos: [
+					{
+						title: title,
+						completed: false,
+						id: Uuid.V4.uuidv4()
+					},
+					...state.todos
+				]
+			}
 		}
 		| CompleteTodo => {
-			state |> List.map(todo => {
-				if (todo.title == id) {
-					{
-						title: todo.title,
-						completed: !todo.completed,
-						id: todo.id
-					};
-				} else {
-					todo;
-				}
-			});
+			{
+				filter: state.filter,
+				todos: state.todos |> List.map(todo => {
+					if (todo.id == id) {
+						{
+							title: todo.title,
+							completed: !todo.completed,
+							id: todo.id
+						};
+					} else {
+						todo;
+					}
+				})
+			}
 		}
 		| DeleteTodo => {
-			state |> List.filter(todo => {
-				todo.id != id;
-			});
+			{
+				filter: state.filter,
+				todos: state.todos |> List.filter(todo => {
+					todo.id != id;
+				})
+			}
 		}
 	}
 };
