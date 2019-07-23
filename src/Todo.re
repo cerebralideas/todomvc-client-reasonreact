@@ -1,5 +1,7 @@
 [@react.component]
-let make = (~todo: StateMgmt.todo, ~dispatch) => {
+let make = (~todo: StateMgmt.todo) => {
+	let ( _, dispatch ) = React.useContext(Provider.context);
+
 	<li>
 		<input type_="checkbox"
 			id="completeTodo"

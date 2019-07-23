@@ -12,15 +12,17 @@ type action =
 	| CompleteTodo
 	| DeleteTodo;
 
-let initialTodo: todo = {
-	title: "Get started with ReasonReact",
-	completed: false,
-	id: Uuid.V4.uuidv4()
-};
 let initialState: state = {
 	filter: "all",
-	todos: [ initialTodo ]
-}
+	todos: [
+		{
+			title: "Get started with ReasonReact",
+			completed: false,
+			id: Uuid.V4.uuidv4()
+		}
+	]
+};
+
 let reducer = (state, (action: action, title: string, id: string)) => {
 	switch (action) {
 		| AddTodo => {

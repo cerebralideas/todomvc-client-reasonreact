@@ -1,13 +1,15 @@
 module App = {
 	[@react.component]
 	let make = () => {
-		let ( state, dispatch ) = StateMgmt.initialState |>
-			React.useReducer(
-				StateMgmt.reducer
-			);
+		let context = StateMgmt.initialState |>
+			React.useReducer( StateMgmt.reducer );
 
-		<Router state dispatch />
+		<Provider value={ context } >
+			<AddTodo />
+			<Todos />
+			<Footer />
+		</Provider>
 	};
 };
 
-ReactDOMRe.renderToElementWithId(<App />, "index2");
+ReactDOMRe.renderToElementWithId(<App />, "app");

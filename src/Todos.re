@@ -1,10 +1,22 @@
 [@react.component]
-let make = (~todos: list(StateMgmt.todo), ~dispatch) => {
+let make = () => {
+	let ( state, _ ) = React.useContext(Provider.context);
+
+	let url = ReasonReactRouter.useUrl();
+	let filteredTodos: list(StateMgmt.todo) = switch (url.hash) {
+		| "all" => state.todos
+		| "active" => state.todos |>
+			List.filter((todo: StateMgmt.todo) => todo.completed == false)
+		| "completed" => state.todos |>
+			List.filter((todo: StateMgmt.todo) => todo.completed == true)
+		| _ => state.todos
+	};
+
 	<ul>
 		(
-			todos |>
+			filteredTodos |>
 				List.map((todo: StateMgmt.todo) => {
-					<Todo key={ todo.id } todo dispatch />
+					<Todo key={ todo.id } todo />
 				})
 		) -> Array.of_list -> React.array
 	</ul>
