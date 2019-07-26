@@ -4,10 +4,12 @@ let make = (~todo: StateMgmt.todo) => {
 
 	<li>
 		<input type_="checkbox"
-			id="completeTodo"
-			onChange={ _ => dispatch(( CompleteTodo: StateMgmt.action, "", todo.id )); }
+			id={ "completeTodo" ++ todo.id }
+			onChange={
+				_ => dispatch(( CompleteTodo: StateMgmt.action, "", todo.id ));
+			}
 			checked={ todo.completed } />
-		<label htmlFor="completeTodo">
+		<label htmlFor={ "completeTodo" ++ todo.id }>
 			todo.title -> React.string
 		</label>
 		<button onClick={

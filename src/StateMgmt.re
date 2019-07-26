@@ -10,7 +10,9 @@ type state = {
 type action =
 	| AddTodo
 	| CompleteTodo
-	| DeleteTodo;
+	| DeleteTodo
+	| CompleteAll
+	| DeleteCompleted;
 
 let initialState: state = {
 	filter: "all",
@@ -23,7 +25,7 @@ let initialState: state = {
 	]
 };
 
-let reducer = (state, (action: action, title: string, id: string)) => {
+let reducer = (state, (action: action, title: string, id: string)) =>
 	switch (action) {
 		| AddTodo => {
 			{
@@ -57,10 +59,40 @@ let reducer = (state, (action: action, title: string, id: string)) => {
 		| DeleteTodo => {
 			{
 				filter: state.filter,
-				todos: state.todos |> List.filter(todo => {
-					todo.id != id;
-				})
+				todos: state.todos |> List.filter(todo =>
+					todo.id != id
+				)
+			}
+		}
+		| CompleteAll => {
+			let hasIncomplete = state.todos |>
+				List.exists(todo => todo.completed == false);
+			{
+				filter: state.filter,
+				todos: switch (hasIncomplete) {
+					| true => state.todos |> List.map(todo =>
+							{
+								title: todo.title,
+								completed: true,
+								id: todo.id
+							}
+						)
+					| false => state.todos |> List.map(todo =>
+							{
+								title: todo.title,
+								completed: false,
+								id: todo.id
+							}
+						)
+				}
+			}
+		}
+		| DeleteCompleted => {
+			{
+				filter: state.filter,
+				todos: state.todos |> List.filter(todo =>
+					todo.completed == false
+				)
 			}
 		}
 	}
-};

@@ -7,9 +7,21 @@ module App = {
 		<Provider value={ context } >
 			<AddTodo />
 			<Todos />
+			<CompleteAll />
+			" " -> React.string
+			<DeleteCompleted />
 			<Footer />
 		</Provider>
 	};
 };
 
 ReactDOMRe.renderToElementWithId(<App />, "app");
+
+/**
+ * Routing for once we migrate to a server
+type func = unit => unit;
+[@bs.module] external page: (~path: string=?, ~callback: func=?, unit) => unit = "page"
+
+page(~path="/test", ~callback=() => Js.log("hello"), ());
+page();
+*/
