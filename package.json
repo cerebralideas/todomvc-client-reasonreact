@@ -16,6 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@glennsl/bs-json": "^4.0.0",
     "bs-guid": "^1.0.1",
     "page": "^1.11.4",
     "react": "^16.8.1",

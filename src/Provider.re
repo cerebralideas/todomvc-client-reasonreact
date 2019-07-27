@@ -1,6 +1,6 @@
 let context = React.createContext((
-	StateMgmt.initialState: StateMgmt.state,
-	((_, _, _)) => (): ((StateMgmt.action, string, string)) => unit
+	StateMgmt.initialState: StateTypes.state,
+	((_, _, _)) => (): ((StateTypes.action, string, string)) => unit
 ));
 
 let makeProps = (~value, ~children, ()) => {

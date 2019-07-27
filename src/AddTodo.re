@@ -5,7 +5,7 @@ let make = () => {
 	let addTodo = event => {
 		event -> ReactEvent.Synthetic.preventDefault;
 		let title = ReactEvent.Form.target(event)##newTodo##value;
-		dispatch(( AddTodo: StateMgmt.action, title, "" ));
+		dispatch(( AddTodo: StateTypes.action, title, "" ));
 	};
 
 	<form onSubmit={ addTodo }>

@@ -2,15 +2,15 @@
 let make = () => {
 	let ( state, _ ) = React.useContext(Provider.context);
 
-	let filteredTodos: list(StateMgmt.todo) =
+	let filteredTodos: list(StateTypes.todo) =
 		ReasonReactRouter.useUrl() |>
 			(url) => switch (url.hash) {
 				| "all" => state.todos
 				| "active" => state.todos |>
-					List.filter((todo: StateMgmt.todo) =>
+					List.filter((todo: StateTypes.todo) =>
 						todo.completed == false)
 				| "completed" => state.todos |>
-					List.filter((todo: StateMgmt.todo) =>
+					List.filter((todo: StateTypes.todo) =>
 						todo.completed == true)
 				| _ => state.todos
 			};
@@ -18,7 +18,7 @@ let make = () => {
 	<ul>
 		(
 			filteredTodos |>
-				List.map((todo: StateMgmt.todo) =>
+				List.map((todo: StateTypes.todo) =>
 					<Todo key={ todo.id } todo />
 				)
 		) -> Array.of_list -> React.array
