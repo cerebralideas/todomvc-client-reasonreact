@@ -7,15 +7,13 @@ module App = {
 		<Provider value={ context } >
 			<AddTodo />
 			<Todos />
-			<CompleteAll />
 			" " -> React.string
-			<DeleteCompleted />
 			<Footer />
 		</Provider>
 	};
 };
 
-ReactDOMRe.renderToElementWithId(<App />, "app");
+ReactDOMRe.renderToElementWithId(<App />, "todoapp");
 
 /**
  * Routing for once we migrate to a server

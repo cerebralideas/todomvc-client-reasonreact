@@ -1,23 +1,34 @@
 [@react.component]
 let make = () => {
-	<ul>
-		<li>
-			<a href="#all"
-				onClick={ _ => ReasonReactRouter.push("#all") }>
-				"All" -> React.string
-			</a>
-		</li>
-		<li>
-			<a href="#active"
-				onClick={ _ => ReasonReactRouter.push("#active") }>
-				"Active" -> React.string
-			</a>
-		</li>
-		<li>
-			<a href="#completed"
-				onClick={ _ => ReasonReactRouter.push("#completed") }>
-				"Completed" -> React.string
-			</a>
-		</li>
-	</ul>
+	let url = ReasonReactRouter.useUrl();
+	let ( state, _ ) = React.useContext(Provider.context);
+	let todoCount = state.todos |> List.length;
+	let activeCount = state.todos |>
+		List.filter((todo: StateTypes.todo) => !todo.completed) |>
+		List.length;
+
+	<footer className="footer">
+		<TodoCount activeCount />
+		<ul className="filters">
+			<li>
+				<a href="#all" className={ url.hash == "all" ? "selected" : "" }
+					onClick={ _ => ReasonReactRouter.push("#all") }>
+					"All" -> React.string
+				</a>
+			</li>
+			<li>
+				<a href="#active" className={ url.hash == "active" ? "selected" : "" }
+					onClick={ _ => ReasonReactRouter.push("#active") }>
+					"Active" -> React.string
+				</a>
+			</li>
+			<li>
+				<a href="#completed" className={ url.hash == "completed" ? "selected" : "" }
+					onClick={ _ => ReasonReactRouter.push("#completed") }>
+					"Completed" -> React.string
+				</a>
+			</li>
+		</ul>
+		<DeleteCompleted activeCount todoCount />
+	</footer>
 };

@@ -14,13 +14,15 @@ let make = () => {
 						todo.completed == true)
 				| _ => state.todos
 			};
-
-	<ul>
-		(
-			filteredTodos |>
-				List.map((todo: StateTypes.todo) =>
-					<Todo key={ todo.id } todo />
-				)
-		) -> Array.of_list -> React.array
-	</ul>
+	<section className="main">
+		<CompleteAll />
+		<ul className="todo-list">
+			(
+				filteredTodos |>
+					List.map((todo: StateTypes.todo) =>
+						<Todo key={ todo.id } todo />
+					)
+			) -> Array.of_list -> React.array
+		</ul>
+	</section>
 };

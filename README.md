@@ -12,11 +12,14 @@ NOTE: Each item/step below is a working version of the app.
 - [x] Feature: Add client-side routing. This is the recommended way to use ReasonReactRouter. Though, I'm not a fan of how integrated the router is into the React views. [(#6c22a21)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/6c22a21454789adfe8bf5e6c931548a5a9791a79)
 - [x] Feature: Add useContext to prevent having to pass state and dispatch around through components [(#d712a5c)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/d712a5c89a1315c866edb0fa732ccfe22ad2beb2)
 - [x] Feature: Add "complete all" and "clear completed" functionality [(#b83b72e)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/b83b72e1252492b1464a87154daa1179e67ae81e)
-- [x] Feature: Add data persistence using LocalStorage [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
+- [x] Feature: Add data persistence using LocalStorage [(#c954486)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c9544860030ccc358bdbd9c2413c95058bf61c1a)
+- [x] Feature: Add official TodoMVC look and feel through official packages [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
+- [ ] Feature: Add "edit" feature to existing todos
+- [ ] Feature: Complete final touches of UX related items, like clearing input after added
 - [ ] Feature: Add local Node (`bs-node`) server for initial HTML page
 - [ ] Feature: Add React independent client-side routing with `page.js` without hash based routes
-- [ ] Feature: Add official TodoMVC look and feel through official packages
-- [ ] Feature: Complete fell feature parity with TodoMVC.
+- [ ] Feature: Complete full feature parity with TodoMVC
+- [ ] Tech: Convert from LocalStorage to IndexedDB (using PouchDB?)
 
 ## Run Project
 
