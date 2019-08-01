@@ -13,7 +13,8 @@ NOTE: Each item/step below is a working version of the app.
 - [x] Feature: Add useContext to prevent having to pass state and dispatch around through components [(#d712a5c)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/d712a5c89a1315c866edb0fa732ccfe22ad2beb2)
 - [x] Feature: Add "complete all" and "clear completed" functionality [(#b83b72e)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/b83b72e1252492b1464a87154daa1179e67ae81e)
 - [x] Feature: Add data persistence using LocalStorage [(#c954486)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c9544860030ccc358bdbd9c2413c95058bf61c1a)
-- [x] Feature: Add official TodoMVC look and feel through official packages [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
+- [x] Feature: Add official TodoMVC look and feel through official packages [(#c896825)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c896825c88af59589288dd299802ba44533c9343)
+- [x] Fix: Added TodoMVC's CSS and JS to Webpack to avoid needing access to `node_modules` at runtime [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
 - [ ] Feature: Add "edit" feature to existing todos
 - [ ] Feature: Complete final touches of UX related items, like clearing input after added
 - [ ] Feature: Add local Node (`bs-node`) server for initial HTML page

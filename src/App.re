@@ -1,3 +1,7 @@
+[%bs.raw {|require('todomvc-common/base.css')|}];
+[%bs.raw {|require('todomvc-app-css/index.css')|}];
+[%bs.raw {|require('todomvc-common/base.js')|}];
+
 module App = {
 	[@react.component]
 	let make = () => {
