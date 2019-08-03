@@ -18,7 +18,7 @@ NOTE: Each item/step below is a working version of the app.
 - [x] Feature: Add "edit" feature to existing todos, clearing input after newly added todo and remove app footer when there are no todos. Also, simplify application state to just todo list, remove or move data closer to component usage [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
 - [ ] Feature: Add local Node (`bs-node`) server for initial HTML page
 - [ ] Feature: Add React independent client-side routing with `page.js` without hash based routes
-- [ ] Feature: Complete full feature parity with TodoMVC: on blur functionality, etc ...
+- [ ] Feature: Complete full feature parity with TodoMVC: on blur functionality, strikethrough when completed, etc ...
 - [ ] Tech: Convert from LocalStorage to IndexedDB (using PouchDB?)
 
 ## Run Project

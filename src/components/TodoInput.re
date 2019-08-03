@@ -33,10 +33,24 @@ let make = (
 				event -> ReactEvent.Synthetic.preventDefault;
 				let title = ReactEvent.Form.target(event)##newTodo##value;
 				dispatch(( EditTodo: StateTypes.action, title, id ));
-				updateText(_ => "");
 				switch (flipEdit) {
-					| None => ()
-					| Some(x) => x(_ => false)
+				| None => ()
+				| Some(x) => x(_ => false)
+				};
+			}
+		};
+		let handleBlur = switch (action) {
+			| Adding => event => {
+				let title = ReactEvent.Focus.target(event)##value;
+				dispatch(( AddTodo: StateTypes.action, title, "" ));
+				updateText(_ => "");
+			}
+			| Editing => event => {
+				let title = ReactEvent.Focus.target(event)##value;
+				dispatch(( EditTodo: StateTypes.action, title, id ));
+				switch (flipEdit) {
+				| None => ()
+				| Some(x) => x(_ => false)
 				};
 			}
 		};
@@ -49,6 +63,8 @@ let make = (
 				id="newTodo" type_="text"
 				value={ inputText }
 				onChange= { handleChange }
+				onBlur={ handleBlur }
+				autoFocus={ action == Editing }
 				placeholder="What needs to be done?" />
 		</form>
 	};
