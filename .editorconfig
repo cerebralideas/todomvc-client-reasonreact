@@ -24,6 +24,6 @@ trim_trailing_whitespace = false
 indent_style = space
 indent_size = 4
 
-[package.json, *.config.js]
+[package.json, *config.js]
 indent_style = space
 indent_size = 2

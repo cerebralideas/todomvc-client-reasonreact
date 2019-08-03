@@ -14,12 +14,11 @@ NOTE: Each item/step below is a working version of the app.
 - [x] Feature: Add "complete all" and "clear completed" functionality [(#b83b72e)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/b83b72e1252492b1464a87154daa1179e67ae81e)
 - [x] Feature: Add data persistence using LocalStorage [(#c954486)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c9544860030ccc358bdbd9c2413c95058bf61c1a)
 - [x] Feature: Add official TodoMVC look and feel through official packages [(#c896825)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c896825c88af59589288dd299802ba44533c9343)
-- [x] Fix: Added TodoMVC's CSS and JS to Webpack to avoid needing access to `node_modules` at runtime [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
-- [ ] Feature: Add "edit" feature to existing todos
-- [ ] Feature: Complete final touches of UX related items, like clearing input after added
+- [x] Fix: Added TodoMVC's CSS and JS to Webpack to avoid needing access to `node_modules` at runtime [(#58a78e2)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/58a78e272113007cf96b92c4a12ac8478c03ab32)
+- [x] Feature: Add "edit" feature to existing todos, clearing input after newly added todo and remove app footer when there are no todos [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
 - [ ] Feature: Add local Node (`bs-node`) server for initial HTML page
 - [ ] Feature: Add React independent client-side routing with `page.js` without hash based routes
-- [ ] Feature: Complete full feature parity with TodoMVC
+- [ ] Feature: Complete full feature parity with TodoMVC: on blur functionality, etc ...
 - [ ] Tech: Convert from LocalStorage to IndexedDB (using PouchDB?)
 
 ## Run Project

@@ -3,12 +3,10 @@ type todo = {
 	completed: bool,
 	id: string
 };
-type state = {
-	filter: string,
-	todos: list(todo)
-};
+type state = list(todo);
 type action =
 	| AddTodo
+	| EditTodo
 	| CompleteTodo
 	| DeleteTodo
 	| CompleteAll
