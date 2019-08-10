@@ -5,10 +5,16 @@
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
+    "reformat": "refmt --in-place src/**/*.re",
+    "server": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack -w",
-    "webpack:production": "NODE_ENV=production webpack",
-    "server": "webpack-dev-server"
+    "webpack:production": "NODE_ENV=production webpack"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run reformat"
+    }
   },
   "keywords": [
     "BuckleScript"
@@ -29,6 +35,7 @@
     "bs-platform": "^5.0.6",
     "css-loader": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.3",
     "style-loader": "^0.23.1",
     "webpack": "^4.0.1",
     "webpack-cli": "^3.1.1",

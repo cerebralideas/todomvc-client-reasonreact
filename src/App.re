@@ -5,18 +5,18 @@
 module App = {
 	[@react.component]
 	let make = () => {
-		let context = StateMgmt.initialState
-			|> React.useReducer( StateMgmt.reducer );
+		let context =
+		StateMgmt.initialState |> React.useReducer(StateMgmt.reducer);
 
-		<Provider value={ context } >
-			<div  className="todoapp">
-				<Header />
-				<Todos />
-				" " -> React.string
-				<AppFooter />
-			</div>
-			<SiteFooter />
-		</Provider>
+		 <Provider value=context>
+		<div className="todoapp">
+			<Header />
+		     	<Todos />
+			" "->React.string
+			<AppFooter />
+		</div>
+		<SiteFooter />
+		</Provider>;
 	};
 };
 

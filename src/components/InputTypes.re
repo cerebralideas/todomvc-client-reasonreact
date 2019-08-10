@@ -1,3 +1,3 @@
 type action =
-	| Adding
-	| Editing;
+  | Adding
+  | Editing;
