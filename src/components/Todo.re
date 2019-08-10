@@ -2,6 +2,8 @@
 let make = (~todo: StateTypes.todo) => {
   let (_, dispatch) = React.useContext(Provider.context);
   let (editing, flipEdit) = React.useState(() => false);
+  let editingClass = editing ? "editing" : "";
+  let completedClass = todo.completed ? "completed" : "";
 
   let element =
     switch (editing) {
@@ -40,5 +42,5 @@ let make = (~todo: StateTypes.todo) => {
         flipEdit
       />
     };
-  <li className={editing ? "editing" : ""}> element </li>;
+  <li className={editingClass ++ " " ++ completedClass}> element </li>;
 };

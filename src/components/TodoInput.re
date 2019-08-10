@@ -9,7 +9,8 @@ let make =
     ) => {
   let (_, dispatch) = React.useContext(Provider.context);
   let (inputText, updateText) =
-    React.useState(() => switch (todoText) {
+    React.useState(() =>
+      switch (todoText) {
       | None => ""
       | Some(x) => x
       }
