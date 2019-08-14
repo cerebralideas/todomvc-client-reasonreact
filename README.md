@@ -1,27 +1,29 @@
 # todomvc-client-reasonreact
 
+## Project Intention
+
 This is a WIP for learning ReasonML and ReasonReact that will eventually become a full [TodoMVC application](http://todomvc.com/). Yes, [there is this one](https://github.com/reasonml-community/reason-react-example/tree/master/src/todomvc), but I want to write a ReasonML version utilizing my own approach to engineering and architecture.
 
 ## Project Progress
 
-NOTE: Each item/step below is a working version of the app.
+[NOTE: Each item/step below is a working version of the app. Listed from latest to oldest.]
 
-- [x] Initial: Get a super-basic todo, add-only, name-only, list created [(#2460cc4)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/2460cc4b1869b09ad681bb1389dbee7fc6e21aa4)
-- [x] Feature: Create todos with "complete" capability, add `id` and `key`s, convert to `useReducer` and switch [(#5af9884)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/5af9884eba1b14824b474616e5d47226f1e40271)
-- [x] Feature: Add delete functionality to todos, move state management to independent module, expand component usage, leverage "pipe first" and "pipe last" (aka "reverse application operator") [(#7672a65)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/7672a65883950eb26f9c647bec8879b28d501f3c)
-- [x] Feature: Add client-side routing. This is the recommended way to use ReasonReactRouter. Though, I'm not a fan of how integrated the router is into the React views. [(#6c22a21)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/6c22a21454789adfe8bf5e6c931548a5a9791a79)
-- [x] Feature: Add useContext to prevent having to pass state and dispatch around through components [(#d712a5c)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/d712a5c89a1315c866edb0fa732ccfe22ad2beb2)
-- [x] Feature: Add "complete all" and "clear completed" functionality [(#b83b72e)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/b83b72e1252492b1464a87154daa1179e67ae81e)
-- [x] Feature: Add data persistence using LocalStorage [(#c954486)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c9544860030ccc358bdbd9c2413c95058bf61c1a)
-- [x] Feature: Add official TodoMVC look and feel through official packages [(#c896825)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c896825c88af59589288dd299802ba44533c9343)
-- [x] Fix: Added TodoMVC's CSS and JS to Webpack to avoid needing access to `node_modules` at runtime [(#58a78e2)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/58a78e272113007cf96b92c4a12ac8478c03ab32)
-- [x] Feature: Add "edit" feature to existing todos, clearing input after newly added todo and remove app footer when there are no todos. Also, simplify application state to just todo list, remove or move data closer to component usage [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
-- [ ] Feature: Add local Node (`bs-node`) server for initial HTML page
-- [ ] Feature: Add React independent client-side routing with `page.js` without hash based routes
-- [ ] Feature: Complete full feature parity with TodoMVC: on blur functionality, strikethrough when completed, etc ...
 - [ ] Tech: Convert from LocalStorage to IndexedDB (using PouchDB?)
+- [ ] Feature: Complete full feature parity with TodoMVC: on blur functionality, strikethrough when completed, etc ...
+- [ ] Feature: Add React independent client-side routing with `page.js` without hash based routes
+- [ ] Feature: Add local Node (`bs-node`) server for initial HTML page
+- [x] Feature: Add "edit" feature to existing todos, clearing input after newly added todo and remove app footer when there are no todos. Also, simplify application state to just todo list, remove or move data closer to component usage [(master)](https://github.com/cerebralideas/todomvc-client-reasonreact)
+- [x] Fix: Added TodoMVC's CSS and JS to Webpack to avoid needing access to `node_modules` at runtime [(#58a78e2)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/58a78e272113007cf96b92c4a12ac8478c03ab32)
+- [x] Feature: Add official TodoMVC look and feel through official packages [(#c896825)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c896825c88af59589288dd299802ba44533c9343)
+- [x] Feature: Add data persistence using LocalStorage [(#c954486)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/c9544860030ccc358bdbd9c2413c95058bf61c1a)
+- [x] Feature: Add "complete all" and "clear completed" functionality [(#b83b72e)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/b83b72e1252492b1464a87154daa1179e67ae81e)
+- [x] Feature: Add useContext to prevent having to pass state and dispatch around through components [(#d712a5c)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/d712a5c89a1315c866edb0fa732ccfe22ad2beb2)
+- [x] Feature: Add client-side routing. This is the recommended way to use ReasonReactRouter. Though, I'm not a fan of how integrated the router is into the React views. [(#6c22a21)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/6c22a21454789adfe8bf5e6c931548a5a9791a79)
+- [x] Feature: Add delete functionality to todos, move state management to independent module, expand component usage, leverage "pipe first" and "pipe last" (aka "reverse application operator") [(#7672a65)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/7672a65883950eb26f9c647bec8879b28d501f3c)
+- [x] Feature: Create todos with "complete" capability, add `id` and `key`s, convert to `useReducer` and switch [(#5af9884)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/5af9884eba1b14824b474616e5d47226f1e40271)
+- [x] Initial: Get a super-basic todo, add-only, name-only, list created [(#2460cc4)](https://github.com/cerebralideas/todomvc-client-reasonreact/commit/2460cc4b1869b09ad681bb1389dbee7fc6e21aa4)
 
-## Run Project
+## Up and Running
 
 ```sh
 npm install

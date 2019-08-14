@@ -1,6 +1,6 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const outputDir = path.join(__dirname, 'build/');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -8,10 +8,11 @@ module.exports = {
   entry: './src/App.bs.js',
   mode: isProd ? 'production' : 'development',
   output: {
-    path: outputDir,
-    filename: 'index.js'
+    path: path.join(__dirname, 'public/'),
+    filename: 'main.js'
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: false
@@ -19,11 +20,14 @@ module.exports = {
   ],
   module: {
     rules: [
-    {
-      test: /\.css$/i,
-      use: [ 'style-loader', 'css-loader' ]
-    }
-  ]
+      {
+        test: /\.css$/i,
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          'css-loader'
+        ]
+      }
+    ]
   },
   devServer: {
     compress: true,
